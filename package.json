@@ -1,0 +1,19 @@
+{
+  "name": "pia-portal-take-backend-v2",
+  "version": "0.0.1",
+  "description": "Parallel version or the Portal for API tests",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mabner/pia-portal-take-backend-v2.git"
+  },
+  "author": "Marcos Leite",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mabner/pia-portal-take-backend-v2/issues"
+  },
+  "homepage": "https://github.com/mabner/pia-portal-take-backend-v2#readme"
+}
