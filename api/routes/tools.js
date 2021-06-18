@@ -20,16 +20,10 @@ router.post('/', async (req, res) => {
 	res.send('Cadastro realizado com sucesso.');
 });
 
-// router.put( '/:id', async ( req, res ) =>
-// {
-//   await tools.updateOne( { _id: req.params.id } );
-//   res.send( 'Cadastro alterado com' );
-// } );
-
 router.patch('/:id', async (req, res) => {
-	const editTool = new tools(req.body);
-	editTool.save();
-	res.send('Cadastro alterado como teste.');
+	const updateTool = req.body;
+	tools.findOneAndUpdate({ _id: req.params.id }, updateTool, { new: true });
+	res.send('Cadastro atualizado com sucesso.');
 });
 
 router.delete('/:id', async (req, res) => {
