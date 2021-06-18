@@ -1,5 +1,7 @@
-const express = require( 'express' );
 require( 'dotenv' ).config();
+
+const express = require( 'express' );
+require( './api/config/database' );
 
 const app = express();
 
