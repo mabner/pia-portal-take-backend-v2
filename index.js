@@ -7,6 +7,9 @@ const app = express();
 
 app.use( express.json() );
 
+const toolsRouter = require( './api/routes/tools' );
+
+app.use( '/api/v1/tools', toolsRouter );
 
 const PORT = process.env.PORT;
 

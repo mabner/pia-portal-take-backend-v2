@@ -8,15 +8,11 @@ const options = {
     useCreateIndex: true
 };
 
-const openConnection = () =>
-    mongoose.connect( url, options ).then( function ()
+mongoose.connect( url, options ).then( function ()
+{
+    console.log( 'Mongo Atlas is connected' );
+} )
+    .catch( function ( err )
     {
-        console.log( 'Mongo Atlas connected' );
-    } ).catch( function ( error )
-    {
-        console.log( error );
+        console.log( err );
     } );
-
-module.exports = {
-    openConnection,
-};
