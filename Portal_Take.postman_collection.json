@@ -12,12 +12,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3001/api/v1/tools",
-					"protocol": "http",
+					"raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pia-portal-take-backend",
+						"herokuapp",
+						"com"
 					],
-					"port": "3001",
 					"path": [
 						"api",
 						"v1",
@@ -42,12 +43,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/api/v1/tools",
-					"protocol": "http",
+					"raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pia-portal-take-backend",
+						"herokuapp",
+						"com"
 					],
-					"port": "3001",
 					"path": [
 						"api",
 						"v1",
@@ -63,12 +65,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3001/api/v1/tools/:id",
-					"protocol": "http",
+					"raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools/:id",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pia-portal-take-backend",
+						"herokuapp",
+						"com"
 					],
-					"port": "3001",
 					"path": [
 						"api",
 						"v1",
@@ -91,12 +94,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3001/api/v1/tools/:id",
-					"protocol": "http",
+					"raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools/:id",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pia-portal-take-backend",
+						"herokuapp",
+						"com"
 					],
-					"port": "3001",
 					"path": [
 						"api",
 						"v1",
@@ -128,12 +132,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/api/v1/tools/:id",
-					"protocol": "http",
+					"raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools/:id",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"pia-portal-take-backend",
+						"herokuapp",
+						"com"
 					],
-					"port": "3001",
 					"path": [
 						"api",
 						"v1",
