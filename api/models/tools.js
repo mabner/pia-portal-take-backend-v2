@@ -1,4 +1,4 @@
-const mongoose = require( 'mongoose' );
+const mongoose = require('mongoose');
 
 const toolsSchema = new mongoose.Schema({
 	name: {
@@ -22,4 +22,4 @@ const toolsSchema = new mongoose.Schema({
 	},
 });
 
-module.exports = mongoose.model( 'tools', toolsSchema );
+module.exports = mongoose.model('tools', toolsSchema);

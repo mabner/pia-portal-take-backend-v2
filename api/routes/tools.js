@@ -51,7 +51,7 @@ router.put('/:id', async (req, res) => {
 			req.body,
 			{
 				new: true,
-			}
+			},
 		)
 		.then((tool) => {
 			res.status(200).json(tool);

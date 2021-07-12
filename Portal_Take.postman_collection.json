@@ -1,181 +1,181 @@
 {
-	"info": {
-		"_postman_id": "30e97363-5c75-4f74-bd9c-d022086611ba",
-		"name": "PIA - Portal Take",
-		"description": "# Introduction\nAPI created ofr the Portal Project\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Get Tools",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools",
-					"protocol": "https",
-					"host": [
-						"pia-portal-take-backend",
-						"herokuapp",
-						"com"
-					],
-					"path": [
-						"api",
-						"v1",
-						"tools"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Post Tools",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"name\": \"Postman\",\r\n  \"description\": \"API Testing tool\",\r\n  \"usage\": \"API Test\",\r\n  \"tURL\": \"www.postman.com\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools",
-					"protocol": "https",
-					"host": [
-						"pia-portal-take-backend",
-						"herokuapp",
-						"com"
-					],
-					"path": [
-						"api",
-						"v1",
-						"tools"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Tool by ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools/:id",
-					"protocol": "https",
-					"host": [
-						"pia-portal-take-backend",
-						"herokuapp",
-						"com"
-					],
-					"path": [
-						"api",
-						"v1",
-						"tools",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "60cc39ac50c3b434b015b7a6"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Tool by ID",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools/:id",
-					"protocol": "https",
-					"host": [
-						"pia-portal-take-backend",
-						"herokuapp",
-						"com"
-					],
-					"path": [
-						"api",
-						"v1",
-						"tools",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "60cc39ac50c3b434b015b7a6"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Put Tool by ID",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Postman Test 3 Teste Novo\",\r\n    \"description\": \"API\",\r\n    \"usage\": \"API Test\",\r\n    \"tURL\": \"www.postman.com\",\r\n    \"__v\": 0\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools/:id",
-					"protocol": "https",
-					"host": [
-						"pia-portal-take-backend",
-						"herokuapp",
-						"com"
-					],
-					"path": [
-						"api",
-						"v1",
-						"tools",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "60cc4098809ff216d876fa2c"
-						}
-					]
-				}
-			},
-			"response": []
-		}
-	],
-	"event": [
-		{
-			"listen": "prerequest",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					""
-				]
-			}
-		},
-		{
-			"listen": "test",
-			"script": {
-				"type": "text/javascript",
-				"exec": [
-					"pm.test(\"Status code is 200\", function () {",
-					"    pm.response.to.have.status(200);",
-					"});"
-				]
-			}
-		}
-	]
+  "info": {
+    "_postman_id": "30e97363-5c75-4f74-bd9c-d022086611ba",
+    "name": "PIA - Portal Take",
+    "description": "# Introduction\nAPI created ofr the Portal Project\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Tools",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools",
+          "protocol": "https",
+          "host": [
+            "pia-portal-take-backend",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tools"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post Tools",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Postman\",\r\n  \"description\": \"API Testing tool\",\r\n  \"usage\": \"API Test\",\r\n  \"tURL\": \"www.postman.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools",
+          "protocol": "https",
+          "host": [
+            "pia-portal-take-backend",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tools"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Tool by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools/:id",
+          "protocol": "https",
+          "host": [
+            "pia-portal-take-backend",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tools",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "60cc39ac50c3b434b015b7a6"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Tool by ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools/:id",
+          "protocol": "https",
+          "host": [
+            "pia-portal-take-backend",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tools",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "60cc39ac50c3b434b015b7a6"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Put Tool by ID",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Postman Test 3 Teste Novo\",\r\n    \"description\": \"API\",\r\n    \"usage\": \"API Test\",\r\n    \"tURL\": \"www.postman.com\",\r\n    \"__v\": 0\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://pia-portal-take-backend.herokuapp.com/api/v1/tools/:id",
+          "protocol": "https",
+          "host": [
+            "pia-portal-take-backend",
+            "herokuapp",
+            "com"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "tools",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "60cc4098809ff216d876fa2c"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.test(\"Status code is 200\", function () {",
+          "    pm.response.to.have.status(200);",
+          "});"
+        ]
+      }
+    }
+  ]
 }
