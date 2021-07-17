@@ -18,6 +18,7 @@ const server = express();
 
 require('./config/database');
 require('./config/github.strategy');
+const bodyParser = require('body-parser');
 
 server.use(logger('dev'));
 server.use(express.json());
@@ -26,6 +27,7 @@ server.use(cookieParser());
 
 // Passport
 server.use(session({secret: 'rainbow bbt', resave: false, saveUninitialized: false}));
+server.use(bodyParser.urlencoded({extended: false}));
 server.use(passport.initialize());
 server.use(passport.session());
 

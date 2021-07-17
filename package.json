@@ -4,7 +4,7 @@
   "description": "Test API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "node index.js",
     "dev": "nodemon"
   },
@@ -28,6 +28,9 @@
     "passport-github2": "^0.1.12"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.0.2",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12"
   }

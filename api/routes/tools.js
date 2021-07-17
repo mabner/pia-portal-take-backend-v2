@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const tools = require('../models/tools');
-const ensureAuthenticated = require('../../config/ensureAuthenticated');
+// const ensureAuthenticated = require('../../config/ensureAuthenticated');
 
 
 // Get all tools
-router.get('/', ensureAuthenticated, async (req, res) => {
+router.get('/', async (req, res) => {
 	await tools
 		.find()
 		.then((tools) => {
