@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require( 'mongoose' );
 
-const toolsSchema = new mongoose.Schema({
+const toolsSchema = new mongoose.Schema( {
 	name: {
 		type: String,
 		required: true,
@@ -20,6 +20,6 @@ const toolsSchema = new mongoose.Schema({
 		type: Date,
 		default: Date.now,
 	},
-});
+} );
 
-module.exports = mongoose.model('tools', toolsSchema);
+module.exports = mongoose.model( 'tools', toolsSchema );
