@@ -9,7 +9,6 @@ const passport = require( 'passport' );
 const session = require( 'express-session' );
 const cookieParser = require( 'cookie-parser' );
 const allowCors = require( './config/cors' );
-const logger = require( 'morgan' );
 
 
 // Declaring the routes
@@ -22,7 +21,6 @@ const server = express();
 const bodyParser = require( 'body-parser' );
 
 
-server.use( logger( 'dev' ) );
 server.use( express.json() );
 server.use( allowCors );
 server.use( cookieParser() );
