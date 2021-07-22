@@ -27,11 +27,5 @@ https://portal-take.vercel.app/
 ### URL do backend
 
 ```bash
-https://pia-portal-take-backend.vercel.app/
-```
-
-ou
-
-```bash
 https://pia-portal-take-backend.herokuapp.com/
 ```
