@@ -39,3 +39,15 @@ describe('Teste — Página não encontrada.', () => {
 			});
 	});
 });
+
+describe('Teste — Página encontrada.', () => {
+	it('Página não encontrada', (done) => {
+		chai
+			.request('http://localhost:3001')
+			.get(`/api/v1/tools/`)
+			.end((err, res) => {
+				res.should.have.status(200);
+				done();
+			});
+	});
+});
