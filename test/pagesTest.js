@@ -4,20 +4,20 @@ let should = chai.should();
 
 chai.use(chaiHttp);
 
-describe('Teste — Cadastro de ferramenta.', () => {
-	it('Ferramenta não encontrada', (done) => {
+describe('Teste — Páginas.', () => {
+	it('Página não encontrada', (done) => {
 		chai
 			.request('http://localhost:3001')
-			.get(`/api/v1/tools/999`)
+			.get(`/api/v1/toolstest/`)
 			.end((err, res) => {
-				res.should.have.status(500);
+				res.should.have.status(404);
 				done();
 			});
 	});
-	it('Ferramenta encontrada', (done) => {
+	it('Página encontrada', (done) => {
 		chai
 			.request('http://localhost:3001')
-			.get(`/api/v1/tools/60f24239ebb9e009b8687594`)
+			.get(`/api/v1/tools/`)
 			.end((err, res) => {
 				res.should.have.status(200);
 				done();
