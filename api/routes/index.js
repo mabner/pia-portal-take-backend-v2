@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
+const ensureAuthenticated = require('../../config/ensureAuthenticated');
 
-router.get('/', function (req, res, next) {
+router.get('/', ensureAuthenticated, function (req, res, next) {
 	res.render('index');
 });
 

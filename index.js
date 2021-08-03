@@ -1,11 +1,11 @@
 require('dotenv').config();
 require('./config/database');
-require('./config/github.strategy');
 
 const express = require('express');
 const PORT = process.env.PORT;
 const cors = require('cors');
 const passport = require('passport');
+const GitHubStrategy = require('passport-github2').Strategy;
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const allowCors = require('./config/cors');
@@ -30,14 +30,36 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(passport.initialize());
 server.use(passport.session());
 
-server.get('/auth/error', (req, res) => res.send('Unknown Error'));
+passport.serializeUser(function (user, done) {
+	done(null, user);
+});
+
+passport.deserializeUser(function (user, done) {
+	done(null, user);
+});
+
+passport.use(
+	new GitHubStrategy(
+		{
+			clientID: process.env.GITHUB_CLIENT_ID,
+			clientSecret: process.env.GITHUB_CLIENT_SECRET,
+			callbackURL: process.env.GITHUB_CALLBACK_URL,
+		},
+		function (accessToken, refreshToken, profile, done) {
+			process.nextTick(function () {
+				return done(null, profile);
+			});
+		}
+	)
+);
+
 server.get(
 	'/auth/github',
 	passport.authenticate('github', { scope: ['user:email'] })
 );
 server.get(
 	'/auth/github/callback',
-	passport.authenticate('github', { failureRedirect: '/auth/error' }),
+	passport.authenticate('github', { failureRedirect: '/home' }),
 	function (req, res) {
 		res.redirect('/');
 	}
@@ -46,7 +68,7 @@ server.get(
 server.get('/logout', (req, res) => {
 	req.session = null;
 	req.logout();
-	res.redirect('/');
+	res.redirect('/home');
 });
 
 // Using the routes

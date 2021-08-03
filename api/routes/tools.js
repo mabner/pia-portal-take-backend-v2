@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const tools = require('../models/tools');
-// const ensureAuthenticated = require('../../config/ensureAuthenticated');
 
 // Get all tools
 router.get('/', async (req, res) => {
