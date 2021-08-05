@@ -1,10 +1,9 @@
-const FRONT_URL = process.env.FRONT_URL;
-
-function ensureAuthenticated(req, res, next) {
-	if (req.isAuthenticated()) {
-		return next();
+const ensureAuthenticated = (req, res, next) => {
+	if (req.user) {
+		next();
+	} else {
+		res.status(401).send('Not Logged In');
 	}
-	res.redirect(FRONT_URL);
-}
+};
 
 module.exports = ensureAuthenticated;
