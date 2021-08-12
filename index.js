@@ -1,11 +1,12 @@
 require('dotenv').config();
 require('./config/database');
+require('./config/github.strategy');
+require('./config/cors');
 
 const express = require('express');
 
 const PORT = process.env.PORT;
 const passport = require('passport');
-const GitHubStrategy = require('passport-github2').Strategy;
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const allowCors = require('./config/cors');
@@ -16,6 +17,9 @@ const server = express();
 // Declaring the routes
 const indexRouter = require('./api/routes/index');
 const toolsRouter = require('./api/routes/tools');
+const mapRouter = require('./api/routes/map');
+const loginRouter = require('./api/routes/login');
+const logoutRouter = require('./api/routes/logout');
 
 server.use(express.json());
 server.use(allowCors);
@@ -30,66 +34,16 @@ server.use(urlencoded({ extended: false }));
 server.use(passport.initialize());
 server.use(passport.session());
 
-passport.serializeUser(function (user, done) {
-	done(null, user);
-});
-
-passport.deserializeUser(function (user, done) {
-	done(null, user);
-});
-
-passport.use(
-	new GitHubStrategy(
-		{
-			clientID: process.env.GITHUB_CLIENT_ID,
-			clientSecret: process.env.GITHUB_CLIENT_SECRET,
-			callbackURL: process.env.GITHUB_CALLBACK_URL,
-		},
-		function (accessToken, refreshToken, profile, done) {
-			process.nextTick(function () {
-				return done(null, profile);
-			});
-		}
-	)
-);
-
-server.get('/auth/error', (req, res) =>
-	res.send('Unknown Authentication Error')
-);
-
-server.get(
-	'/auth/github',
-	passport.authenticate('github', { scope: ['user:email'] })
-);
-server.get(
-	'/auth/github/callback',
-	passport.authenticate('github', { failureRedirect: '/auth/error' }),
-	function (req, res) {
-		res.redirect('/');
-	}
-);
-
-server.get('/login', (req, res) => {
-	if (req.user) {
-		return res.redirect('/map');
-	}
-	res.redirect('/');
-});
-
-server.get('/logout', (req, res) => {
-	req.session = null;
-	req.logOut();
-	res.redirect('/');
-});
-
-
 // Using the routes
 server.use('/', indexRouter);
-server.use('/api', indexRouter);
-server.use('/api/v1', indexRouter);
 server.use('/api/v1/tools', toolsRouter);
+server.use('/map', mapRouter);
+server.use('/login', loginRouter);
+server.use('/logout', logoutRouter);
 
 // Server
 server.listen(PORT, () => {
 	console.log(`Server listening on port ${PORT}`);
 });
+
+module.exports = server;

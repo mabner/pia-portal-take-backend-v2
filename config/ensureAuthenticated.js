@@ -1,5 +1,5 @@
 const ensureAuthenticated = (req, res, next) => {
-	if (req.user) {
+	if (req.isAuthenticated()) {
 		next();
 	} else {
 		res.status(401).send('Not Logged In');
