@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
 
 const usageSchema = new mongoose.Schema({
-	usage: {
+	name: {
 		type: String,
+	},
+	usage: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'tools',
 	},
 });
 

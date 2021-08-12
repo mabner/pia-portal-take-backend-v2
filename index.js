@@ -1,7 +1,7 @@
 require('dotenv').config();
 require('./config/database');
 require('./config/github.strategy');
-require('./config/cors');
+const cors = require('cors');
 
 const express = require('express');
 
@@ -22,7 +22,7 @@ const loginRouter = require('./api/routes/login');
 const logoutRouter = require('./api/routes/logout');
 
 server.use(express.json());
-server.use(allowCors);
+server.use(cors());
 server.use(cookieParser());
 
 server.use(
