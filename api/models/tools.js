@@ -1,5 +1,13 @@
 const mongoose = require('mongoose');
 
+const usageSchema = new mongoose.Schema({
+	usage: {
+		type: String,
+	},
+});
+
+module.exports = mongoose.model('usage', usageSchema);
+
 const toolsSchema = new mongoose.Schema({
 	name: {
 		type: String,
